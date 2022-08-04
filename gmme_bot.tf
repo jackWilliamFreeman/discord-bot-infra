@@ -10,7 +10,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   family             = local.gb_task_def_name
   execution_role_arn = "arn:aws:iam::${local.id}:role/ecsTaskExecutionRole"
   memory             = 200
-  cpu                = 0
+  cpu                = 128 
   container_definitions = data.template_file.task_template_parameterstore.rendered
   tags = merge(
     local.common_tags,
