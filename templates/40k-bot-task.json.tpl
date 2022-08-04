@@ -3,8 +3,8 @@
       "name": "${name}",
       "image": "${ecr_repo}",
       "essential": true,
-      "memory": 512,
-      "cpu": 256,
+      "memory": 200,
+      "cpu": 0,
       "logConfiguration": {
           "logDriver": "awslogs",
           "options": {

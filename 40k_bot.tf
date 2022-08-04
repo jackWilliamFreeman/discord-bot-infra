@@ -9,8 +9,8 @@ resource "aws_ecr_repository" "proverbinatusbot" {
 resource "aws_ecs_task_definition" "kbot_task_definition" {
   family             = local.gb_task_def_name
   execution_role_arn = "arn:aws:iam::${local.id}:role/ecsTaskExecutionRole"
-  memory             = 512
-  cpu                = 256
+  memory             = 200
+  cpu                = 0
   container_definitions = data.template_file.kbot_template.rendered
   tags = merge(
     local.common_tags,
