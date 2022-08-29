@@ -30,7 +30,7 @@ locals {
   }
   vpc_cidr = var.vpc_cidr
   id = 301687741300
-}
+} 
 
 module "ecs_vpc" {
   source = "terraform-aws-modules/vpc/aws"
@@ -42,9 +42,9 @@ module "ecs_vpc" {
   private_subnets = var.private_subnets
   public_subnets  = var.public_subnets
 
-  enable_nat_gateway     = true
+  #enable_nat_gateway     = true
   enable_dns_hostnames   = true
-  one_nat_gateway_per_az = true
+  #one_nat_gateway_per_az = true
 
   tags = local.common_tags
 }
